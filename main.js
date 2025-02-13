@@ -6,9 +6,20 @@ if (boolean) {
 	console.log("falseの処理");
 	console.log(boolean);
 };
-/* elseは　後ろの「: (コロン)」のつけ忘れに注意 */
-/*　else文に含まれる処理は、インデントして記述する。処理が複数行ある場合も、全てインデントする。インデントしていない部分はelseに含まれない　*/
-/* elseの条件が正しく反映されているか確認する*/
+/* 
+	① elseを使用する時の注意点
+	- elseの前に :（コロン）をつけない
+	- else文に含まれる処理は、すべて `{}` で囲み、適切にインデントする
+	- elseの後には `{}` を省略せずに書く
+*/
+
+/* 
+	② JavaScriptで実装した時の確認ポイント
+	- elseの条件が正しく反映されているか確認する
+	- 想定外の値でも適切に処理されるかテストする
+	- console.log() を使って、想定通りの分岐に入るか確認する
+*/
+
 var num = 100
 if (num === 90) {
 	console.log("falseの処理");
@@ -24,4 +35,16 @@ if (num > 80) {
 } else {
 	console.log("trueの処理");
 	console.log("numは80以下です。");
+}
+
+var fruit = "banana";
+if (fruit === "apple") {
+	console.log("falseの処理");
+	console.log("これはリンゴです。");
+} else if (fruit === "orange") {
+	console.log("falseの処理");
+	console.log("これはオレンジです。");
+} else {
+	console.log("trueの処理");
+	console.log("これはリンゴでもオレンジでもありません。"); // `banana` なので `else` に入る
 }
